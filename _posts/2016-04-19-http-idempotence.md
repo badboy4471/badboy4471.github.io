@@ -20,9 +20,10 @@ description: HTTP方法的幂等性是指一次和多次请求某一个资源应
 
 为什么需要幂等性呢？我们先从一个例子说起，假设有一个从账户取钱的远程API（可以是HTTP的，也可以不是），我们暂时用类函数的方式记为：
 
-    `
+    ``
     bool withdraw(account_id, amount)
-    `
+    ``
+
 withdraw的语义是从account_id对应的账户中扣除amount数额的钱；如果扣除成功则返回true，账户余额减少amount；如果扣除失败则返回false，账户余额不变。值得注意的是：和本地环境相比，我们不能轻易假设分布式环境的可靠性。一种典型的情况是withdraw请求已经被服务器端正确处理，但服务器端的返回结果由于网络等原因被掉丢了，导致客户端无法得知处理结果。如果是在网页上，一些不恰当的设计可能会使用户认为上一次操作失败了，然后刷新页面，这就导致了withdraw被调用两次，账户也被多扣了一次钱。如图1所示：
 
     ![图1](/assets/img/http-idempotence-1.jpeg)
@@ -31,9 +32,9 @@ withdraw的语义是从account_id对应的账户中扣除amount数额的钱；�
 
 另一种更轻量级的解决方案是幂等设计。我们可以通过一些技巧把withdraw变成幂等的，比如：
 
-    `
+    ``
     int create_ticket() bool idempotent_withdraw(ticket_id, account_id, amount)
-    `
+    ``
 
 create_ticket的语义是获取一个服务器端生成的唯一的处理号ticket_id，它将用于标识后续的操作。idempotent_withdraw和withdraw的区别在于关联了一个ticket_id，一个ticket_id表示的操作至多只会被处理一次，每次调用都将返回第一次调用时的处理结果。这样，idempotent_withdraw就符合幂等性了，客户端就可以放心地多次调用。
 
