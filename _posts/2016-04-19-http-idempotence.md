@@ -1,6 +1,14 @@
 ---
 layout: artical
+title: 
+---
+
+---
+layout: post
 title: 理解HTTP幂等性
+category: 技术
+tags: HTTP
+description: HTTP方法的幂等性是指一次和多次请求某一个资源应该具有同样的副作用。
 ---
 
 ## {{ page.title }}
