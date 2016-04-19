@@ -96,14 +96,19 @@ description: 关于Code Review的重要性，我相信好的工程师都能认�
 ### 如何进行Code Review
 
 ##### 1、多问问题。多问 “这块儿是怎么工作的？” “如果有XXX case，你这个怎么处理？”
+
 ##### 2、每次提交的代码不要太多，最好不要超过1000行，否则review起来效率会非常低。
+
 ##### 3、当面讨论代替Comments。 大部分情况下小组内的同事是坐在一起的，face to face的 code review是非常有效的。
+
 ##### 4、区分重点，不要舍本逐末。 优先抓住 设计，可读性，健壮性等重点问题。
 
 ### Code Review的意识
 
 ##### 1、作为一个Developer , 不仅要Deliver working code, 还要Deliver maintainable code.
+
 ##### 2、必要时进行重构，随着项目的迭代，在计划新增功能的同时，开发要主动计划重构的工作项。
+
 ##### 3、开放的心态，虚心接受大家的Review Comments。
 
 
