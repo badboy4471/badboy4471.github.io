@@ -1,9 +1,4 @@
 ---
-layout: artical
-title: 
----
-
----
 layout: post
 title: 理解HTTP幂等性
 category: 技术
