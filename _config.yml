@@ -24,12 +24,12 @@ favicon: http://7u2ho6.com1.z0.glb.clouddn.com/site-favicon.ico
 
 # disqus 设置
 disqus:
-  shortname: suyan-zh
+  shortname: badboy4471
 
 # google analytics 设置
 ga:
-  id: UA-54767140-1
-  url: yansu.org
+  id: UA-76613698-1
+  url: badboy4471.github.io
 
 # Build settings
 permalink: /:year/:month/:day/:title.html
