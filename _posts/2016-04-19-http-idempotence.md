@@ -40,7 +40,7 @@ create_ticket的语义是获取一个服务器端生成的唯一的处理号tick
 
 基于幂等性的解决方案中一个完整的取钱流程被分解成了两个步骤：1.调用create_ticket()获取ticket_id；2.调用idempotent_withdraw(ticket_id, account_id, amount)。虽然create_ticket不是幂等的，但在这种设计下，它对系统状态的影响可以忽略，加上idempotent_withdraw是幂等的，所以任何一步由于网络等原因失败或超时，客户端都可以重试，直到获得结果。如图2所示：
 
-    ![图2](https://github.com/badboy4471/badboy4471.github.io/blob/master/assets/img/http-idempotence-2.jpeg)
+![图2](https://github.com/badboy4471/badboy4471.github.io/blob/master/assets/img/http-idempotence-2.jpeg)
 
 和分布式事务相比，幂等设计的优势在于它的轻量级，容易适应异构环境，以及性能和可用性方面。在某些性能要求比较高的应用，幂等设计往往是唯一的选择。
 
