@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 理解HTTP幂等性
+title: Cmd Markdown
 category: 技术
-tags: HTTP
-description: HTTP方法的幂等性是指一次和多次请求某一个资源应该具有同样的副作用。
+tags: 文档
+description: 使用Markdown写文档
 ---
 
 # 欢迎使用 Cmd Markdown 编辑阅读器
